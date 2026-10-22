@@ -21,3 +21,12 @@ plugins {
     id ("org.openjfx.javafxplugin") version ("0.1.0")
 }
 
+javafx {
+    version = "21.0.11"
+    modules = listOf("javafx.controls", "javafx.fxml")
+}
+
+application {
+    // Sostituisci con il percorso completo della classe che farà partire il gioco
+    mainClass.set("it.unicam.cs.mpgc.rpg129518.prova")
+}
