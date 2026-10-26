@@ -1,0 +1,16 @@
+[
+  { "id": "giant_rat", "name": "Ratto Gigante", "hp": 8, "attack": 4, "defense": 0, "xp": 5, "gold": 3 },
+  { "id": "skeleton", "name": "Scheletro", "hp": 12, "attack": 5, "defense": 1, "xp": 8, "gold": 5 },
+  { "id": "zombie", "name": "Zombie", "hp": 18, "attack": 5, "defense": 2, "xp": 10, "gold": 6 },
+  { "id": "skeleton_king", "name": "Re Scheletro", "hp": 45, "attack": 8, "defense": 3, "xp": 50, "gold": 60, "boss": true },
+
+  { "id": "goblin", "name": "Goblin", "hp": 20, "attack": 8, "defense": 3, "xp": 14, "gold": 8 },
+  { "id": "cave_spider", "name": "Ragno delle Caverne", "hp": 16, "attack": 9, "defense": 2, "xp": 12, "gold": 7 },
+  { "id": "orc", "name": "Orco", "hp": 28, "attack": 10, "defense": 4, "xp": 20, "gold": 12 },
+  { "id": "troll", "name": "Troll delle Caverne", "hp": 90, "attack": 13, "defense": 6, "xp": 120, "gold": 150, "boss": true },
+
+  { "id": "dark_knight", "name": "Cavaliere Oscuro", "hp": 40, "attack": 15, "defense": 5, "xp": 35, "gold": 25 },
+  { "id": "corrupted_mage", "name": "Mago Corrotto", "hp": 35, "attack": 17, "defense": 3, "xp": 32, "gold": 22 },
+  { "id": "gargoyle", "name": "Gargoyle", "hp": 45, "attack": 14, "defense": 6, "xp": 38, "gold": 28 },
+  { "id": "dragon", "name": "Drago Antico", "hp": 150, "attack": 22, "defense": 7, "xp": 300, "gold": 400, "boss": true }
+]

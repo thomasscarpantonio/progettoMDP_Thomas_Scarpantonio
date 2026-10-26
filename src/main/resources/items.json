@@ -1,0 +1,20 @@
+[
+  { "id": "small_potion", "type": "POTION", "name": "Pozione Piccola", "description": "Un sorso di vita.", "value": 10, "buyable": true, "healAmount": 15 },
+  { "id": "large_potion", "type": "POTION", "name": "Pozione Grande", "description": "Una boccetta ben piena.", "value": 30, "buyable": true, "healAmount": 40 },
+  { "id": "mana_potion", "type": "POTION", "name": "Pozione di Mana", "description": "Ridà energia magica.", "value": 15, "buyable": true, "manaAmount": 15 },
+  { "id": "elixir", "type": "POTION", "name": "Elisir Antico", "description": "Raro e potente.", "value": 60, "buyable": false, "healAmount": 60, "manaAmount": 20 },
+
+  { "id": "rusty_sword", "type": "WEAPON", "name": "Spada Arrugginita", "description": "Ha visto giorni migliori.", "value": 4, "attackBonus": 1 },
+  { "id": "apprentice_staff", "type": "WEAPON", "name": "Bastone da Apprendista", "description": "Legno di quercia e un cristallo.", "value": 4, "attackBonus": 1 },
+  { "id": "dagger", "type": "WEAPON", "name": "Pugnale", "description": "Piccolo e veloce.", "value": 4, "attackBonus": 1 },
+  { "id": "iron_sword", "type": "WEAPON", "name": "Spada di Ferro", "description": "Affidabile.", "value": 40, "buyable": true, "attackBonus": 3 },
+  { "id": "steel_sword", "type": "WEAPON", "name": "Spada d'Acciaio", "description": "Ben bilanciata.", "value": 120, "buyable": true, "attackBonus": 6 },
+  { "id": "runic_blade", "type": "WEAPON", "name": "Lama Runica", "description": "Le rune brillano al buio.", "value": 300, "buyable": true, "attackBonus": 10 },
+  { "id": "bone_axe", "type": "WEAPON", "name": "Ascia d'Osso", "description": "Ricavata da un gigante.", "value": 50, "attackBonus": 4 },
+
+  { "id": "leather_armor", "type": "ARMOR", "name": "Armatura di Cuoio", "description": "Leggera e comoda.", "value": 30, "buyable": true, "defenseBonus": 2 },
+  { "id": "chain_mail", "type": "ARMOR", "name": "Cotta di Maglia", "description": "Anelli di ferro intrecciati.", "value": 90, "buyable": true, "defenseBonus": 4 },
+  { "id": "plate_armor", "type": "ARMOR", "name": "Armatura a Piastre", "description": "Pesante ma sicura.", "value": 250, "buyable": true, "defenseBonus": 7 },
+  { "id": "goblin_shield", "type": "ARMOR", "name": "Scudo dei Goblin", "description": "Rozzo ma robusto.", "value": 40, "defenseBonus": 3 },
+  { "id": "dragon_scale", "type": "ARMOR", "name": "Scaglie di Drago", "description": "Quasi indistruttibili.", "value": 500, "defenseBonus": 10 }
+]

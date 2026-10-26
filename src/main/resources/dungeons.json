@@ -1,0 +1,23 @@
+[
+  {
+    "id": "crypt", "name": "Cripta dei Dimenticati",
+    "description": "Antiche tombe infestate da non-morti. Ideale per iniziare.",
+    "minLevel": 1, "roomCount": 6,
+    "monsterIds": ["giant_rat", "skeleton", "zombie"], "bossId": "skeleton_king",
+    "lootIds": ["bone_axe", "large_potion", "elixir"], "trapDamage": 5
+  },
+  {
+    "id": "caves", "name": "Caverne dei Goblin",
+    "description": "Un labirinto di tunnel pieno di creature feroci.",
+    "minLevel": 3, "roomCount": 7,
+    "monsterIds": ["goblin", "cave_spider", "orc"], "bossId": "troll",
+    "lootIds": ["goblin_shield", "large_potion", "elixir"], "trapDamage": 9
+  },
+  {
+    "id": "fortress", "name": "Fortezza Oscura",
+    "description": "La dimora di un drago antico. Solo per veri eroi.",
+    "minLevel": 6, "roomCount": 8,
+    "monsterIds": ["dark_knight", "corrupted_mage", "gargoyle"], "bossId": "dragon",
+    "lootIds": ["dragon_scale", "elixir", "runic_blade"], "trapDamage": 14
+  }
+]

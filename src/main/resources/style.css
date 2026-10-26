@@ -1,0 +1,103 @@
+.root {
+    -fx-base: #231f2b;
+    -fx-background: #15121d;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #eadfc8;
+}
+
+.label {
+    -fx-text-fill: #eadfc8;
+}
+
+.title {
+    -fx-text-fill: #f0c75e;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 4, 0, 1, 1);
+}
+
+.game-root, .menu-root {
+    -fx-background-color: linear-gradient(to bottom, #15121d, #241b30);
+}
+
+.panel {
+    -fx-background-color: linear-gradient(to bottom, #2e2639, #221c2b);
+    -fx-background-radius: 8;
+    -fx-border-color: #6b5530;
+    -fx-border-radius: 8;
+    -fx-border-width: 1.5;
+    -fx-padding: 10;
+    -fx-spacing: 8;
+}
+
+.button {
+    -fx-background-color: linear-gradient(to bottom, #6a4f2e, #3e2d1a);
+    -fx-text-fill: #f6e7c1;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-color: #c9a24a;
+    -fx-border-radius: 6;
+    -fx-padding: 7 16 7 16;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #8a6a3e, #54401f);
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #3e2d1a, #6a4f2e);
+}
+
+.button:disabled {
+    -fx-opacity: 0.4;
+}
+
+.text-field, .combo-box {
+    -fx-background-color: #2e2639;
+    -fx-border-color: #6b5530;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-text-fill: #f6e7c1;
+}
+
+.list-view {
+    -fx-background-color: #1a1522;
+    -fx-border-color: #4a3a22;
+}
+
+.list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #eadfc8;
+}
+
+.list-cell:filled:selected {
+    -fx-background-color: #5a4426;
+    -fx-text-fill: #fff3d0;
+}
+
+.text-area, .text-area .content {
+    -fx-control-inner-background: #14101b;
+    -fx-text-fill: #d8cdb5;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+.progress-bar > .track {
+    -fx-background-color: #0d0b12;
+    -fx-background-radius: 4;
+    -fx-border-color: #4a3a22;
+    -fx-border-radius: 4;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: -fx-accent;
+    -fx-background-radius: 3;
+    -fx-background-insets: 2;
+}
+
+.separator .line {
+    -fx-border-color: #4a3a22;
+}
+
+.dialog-pane {
+    -fx-background-color: #231f2b;
+}
