@@ -46,6 +46,77 @@ public class Combat {
         return turn;
     }
 
+    public List<String> attack() {
+        List<String> log = new ArrayList<>();
+        if (!isOngoing(log)) {
+            return log;
+        }
+        Hit hit = calculator.rollHit(player.getAttack(), monster.getDefense());
+        int dealt = monster.takeDamage(hit.amount());
+        log.add(player.getName() + " attacca " + monster.getName() + " e infligge " + dealt + " danni"
+                + (hit.critical() ? " (COLPO CRITICO!)" : "") + ".");
+        return completeTurn(log);
+    }
+
+    public List<String> useAbility() {
+        List<String> log = new ArrayList<>();
+        if (!isOngoing(log)) {
+            return log;
+        }
+        Ability ability = player.getPlayerClass().getAbility();
+        if (!player.spendMana(ability.getManaCost())) {
+            log.add("Mana insufficiente per " + ability.getName() + ".");
+            return log;
+        }
+        int dealt = monster.takeDamage(ability.computeDamage(player, monster, calculator));
+        log.add(player.getName() + " usa " + ability.getName() + " e infligge " + dealt + " danni!");
+        return completeTurn(log);
+    }
+
+    public List<String> defend() {
+        List<String> log = new ArrayList<>();
+        if (!isOngoing(log)) {
+            return log;
+        }
+        defending = true;
+        log.add(player.getName() + " si mette in guardia.");
+        return completeTurn(log);
+    }
+
+    public List<String> useItem(Item item) {
+        List<String> log = new ArrayList<>();
+        if (!isOngoing(log)) {
+            return log;
+        }
+        if (!(item instanceof Consumable consumable)) {
+            log.add(item.getName() + " non si può usare in combattimento.");
+            return log;
+        }
+        if (!player.getInventory().remove(item)) {
+            log.add("Non possiedi " + item.getName() + ".");
+            return log;
+        }
+        log.add(consumable.consume(player));
+        return completeTurn(log);
+    }
+
+    public List<String> flee() {
+        List<String> log = new ArrayList<>();
+        if (!isOngoing(log)) {
+            return log;
+        }
+        if (monster.isBoss()) {
+            log.add("Non puoi fuggire da un boss!");
+            return log;
+        }
+        if (random.nextDouble() < FLEE_CHANCE) {
+            state = CombatState.FLED;
+            return log;
+        }
+        log.add(player.getName() + " tenta la fuga, ma fallisce!");
+        return completeTurn(log);
+    }
+
     // ---- logica interna ----
 
     private boolean isOngoing(List<String> log) {
@@ -56,6 +127,21 @@ public class Combat {
         return true;
     }
 
+    private List<String> completeTurn(List<String> log) {
+        if (!monster.isAlive()) {
+            resolveVictory(log);
+            return log;
+        }
+        monsterTurn(log);
+        if (!player.isAlive()) {
+            state = CombatState.DEFEAT;
+            log.add(player.getName() + " è stato sconfitto...");
+        } else {
+            player.restoreMana(MANA_REGEN_PER_TURN);
+            turn++;
+        }
+        return log;
+    }
 
     private void monsterTurn(List<String> log) {
         if (monster.isSpecialTurn(turn)) {
@@ -69,4 +155,15 @@ public class Combat {
         defending = false;
     }
 
+    private void resolveVictory(List<String> log) {
+        state = CombatState.VICTORY;
+        log.add(monster.getName() + " è stato sconfitto!");
+        player.addGold(monster.getGoldReward());
+        int levels = player.gainXp(monster.getXpReward());
+        log.add("Ottieni " + monster.getXpReward() + " XP e " + monster.getGoldReward() + " monete d'oro.");
+        if (levels > 0) {
+            log.add("LIVELLO SU! Ora sei al livello " + player.getLevel() + ".");
+        }
+    }
 }
+
