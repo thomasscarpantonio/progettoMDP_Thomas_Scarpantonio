@@ -22,7 +22,7 @@ public class Weapon extends Item implements Equippable {
 
     @Override
     public String equipOn(Player player) {
-        //player.equip(this);
+        player.equip(this);
         return player.getName() + " impugna " + getName() + ".";
     }
 }

@@ -22,7 +22,7 @@ public class Armor extends Item implements Equippable {
 
     @Override
     public String equipOn(Player player) {
-        //player.equip(this);
+        player.equip(this);
         return player.getName() + " indossa " + getName() + ".";
     }
 }
