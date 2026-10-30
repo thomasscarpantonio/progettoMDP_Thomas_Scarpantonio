@@ -58,4 +58,3 @@ public enum PlayerClass {
         return ability;
     }
 }
-
