@@ -1,9 +1,11 @@
 package it.unicam.cs.mpgc.rpg129518.model.item;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
 
+/** Pozione che ripristina punti ferita e/o mana. */
 public class Potion extends Item implements Consumable
 {
     private final int healAmount;
