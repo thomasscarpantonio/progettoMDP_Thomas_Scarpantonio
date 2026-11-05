@@ -8,7 +8,7 @@ import java.util.Optional;
 
 /**
  * L'eroe controllato dall'utente. Le statistiche dipendono da classe e livello,
- * quindi per ripristinare un salvataggio bastano pochi valori ({@link #/*restoreState}).
+ * quindi per ripristinare un salvataggio bastano pochi valori ({@link #restoreState}).
  */
   public final class Player extends Entity
   {
