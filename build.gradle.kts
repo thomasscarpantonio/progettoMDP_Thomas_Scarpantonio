@@ -39,7 +39,6 @@ application {
     mainClass.set("it.unicam.cs.mpgc.rpg129518.gui.Launcher")
     applicationDefaultJvmArgs = listOf(
         "--enable-native-access=javafx.graphics",
-        "--enable-native-access=ALL-UNNAMED",
         "--sun-misc-unsafe-memory-access=allow"
     )
 }
