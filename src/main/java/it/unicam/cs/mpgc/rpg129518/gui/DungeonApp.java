@@ -34,7 +34,7 @@ public class DungeonApp extends Application {
         scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());
         showMenu();
 
-        stage.setTitle("Dungeon Crawler");
+        stage.setTitle("Dungeon Busters");
         stage.setScene(scene);
         stage.setMinWidth(1050);
         stage.setMinHeight(720);

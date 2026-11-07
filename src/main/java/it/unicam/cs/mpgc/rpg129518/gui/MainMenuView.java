@@ -26,7 +26,7 @@ public class MainMenuView extends VBox {
         setPadding(new Insets(30));
         getStyleClass().add("menu-root");
 
-        Label title = new Label("DUNGEON CRAWLER");
+        Label title = new Label("DUNGEON BUSTERS");
         title.setFont(Font.font("Serif", FontWeight.BOLD, 44));
         title.getStyleClass().add("title");
 
