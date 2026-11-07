@@ -1,4 +1,11 @@
-group = "org.example"
+plugins {
+    java
+    application
+    id ("application")
+    id ("org.openjfx.javafxplugin") version ("0.1.0")
+}
+
+group = "it.unicam.cs.mpgc.rpg129518"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -17,13 +24,6 @@ tasks.test {
     useJUnitPlatform()
 }
 
-plugins {
-    java
-    application
-    id ("application")
-    id ("org.openjfx.javafxplugin") version ("0.1.0")
-}
-
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(25)
@@ -32,12 +32,16 @@ java {
 
 javafx {
     version = "21.0.11"
-    modules = listOf("javafx.controls", "javafx.fxml")
+    modules = listOf("javafx.controls")
 }
 
 application {
-    // Sostituisci con il percorso completo della classe che farà partire il gioco
-    mainClass.set("it.unicam.cs.mpgc.rpg129518.prova")
+    mainClass.set("it.unicam.cs.mpgc.rpg129518.gui.Launcher")
+    applicationDefaultJvmArgs = listOf(
+        "--enable-native-access=javafx.graphics",
+        "--enable-native-access=ALL-UNNAMED",
+        "--sun-misc-unsafe-memory-access=allow"
+    )
 }
 tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
