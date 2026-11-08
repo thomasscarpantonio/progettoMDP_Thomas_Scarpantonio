@@ -32,12 +32,18 @@ cd progettoMDP_Thomas_Scarpantonio
 ./gradlew run
 ```
 
+### ⚠️ Avviso
+
+Si consiglia, una volta clonato il progetto, di risincronizzare gradle dal pannello verticale a destra
+cliccando l'icona di gradle e successivamente sulle due frecce circolari,nel caso in cui intellij non riconosca
+alcune classi che però esistono e sono senza errori; nonostante ciò il progetto compila e parte tranquillamente.
+
 ---
 
 ## 🤖 Uso di strumenti di AI
 
 Per questo progetto l'AI è stata utilizzata come strumento di supporto ed aiuto in determinate situazioni,
-senza mai delegarne lo sviluppo di intere parti di codice
+senza mai delegarne lo sviluppo di intere parti di codice.
 
 
 * Utilizzato Gemini per:
