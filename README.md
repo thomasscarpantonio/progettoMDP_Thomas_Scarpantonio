@@ -35,8 +35,10 @@ cd progettoMDP_Thomas_Scarpantonio
 ### ⚠️ Avviso
 
 Si consiglia, una volta clonato il progetto, di risincronizzare gradle dal pannello verticale a destra
-cliccando l'icona di gradle e successivamente sulle due frecce circolari,nel caso in cui intellij non riconosca
+cliccando l'icona di gradle e successivamente sulle due frecce circolari, nel caso in cui intellij non riconosca
 alcune classi che però esistono e sono senza errori; nonostante ciò il progetto compila e parte tranquillamente.
+
+<img width="673" height="591" alt="2026-11-08 20_36_33-progettoMDP_Thomas_Scarpantonio – README md  progettoMDP_Thomas_Scarpantonio" src="https://github.com/user-attachments/assets/a6ad51c5-907b-4359-8b6c-92bd060ec7ff" />
 
 ---
 
