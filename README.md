@@ -16,9 +16,7 @@ combattendo a turni mostri e boss, raccogliendo tesori, comprando equipaggiament
 
 ```bash
 git clone https://github.com/thomasscarpantonio/progettoMDP_Thomas_Scarpantonio.git
-```
 
-```bash
 cd progettoMDP_Thomas_Scarpantonio
 ```
 
