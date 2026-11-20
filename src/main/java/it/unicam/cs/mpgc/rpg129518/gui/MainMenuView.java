@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg129518.gui;
 
 import it.unicam.cs.mpgc.rpg129518.engine.Game;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Ability;
+import it.unicam.cs.mpgc.rpg129518.model.combat.AbilityCatalog;
 import it.unicam.cs.mpgc.rpg129518.model.entity.PlayerClass;
 import it.unicam.cs.mpgc.rpg129518.gui.graphics.Sprites;
 import javafx.animation.AnimationTimer;
@@ -98,7 +99,7 @@ public class MainMenuView extends VBox {
     }
 
     private static String describe(PlayerClass playerClass) {
-        Ability ability = playerClass.getAbility();
+        Ability ability = AbilityCatalog.forClass(playerClass);
         return "PV " + playerClass.getBaseHp() + " | MP " + playerClass.getBaseMana()
                 + " | ATT " + playerClass.getBaseAttack() + " | DIF " + playerClass.getBaseDefense()
                 + "\nAbilità: " + ability.getName() + " (" + ability.getManaCost() + " MP)";

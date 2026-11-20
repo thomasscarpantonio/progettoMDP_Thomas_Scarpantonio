@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg129518.engine;
 
 import it.unicam.cs.mpgc.rpg129518.content.DungeonDefinition;
 import it.unicam.cs.mpgc.rpg129518.content.GameContent;
+import it.unicam.cs.mpgc.rpg129518.generation.MapParser;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Combat;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Monster;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
@@ -13,7 +14,7 @@ import it.unicam.cs.mpgc.rpg129518.model.item.ItemStack;
 import it.unicam.cs.mpgc.rpg129518.model.item.Weapon;
 import it.unicam.cs.mpgc.rpg129518.model.world.Direction;
 import it.unicam.cs.mpgc.rpg129518.model.world.Dungeon;
-import it.unicam.cs.mpgc.rpg129518.model.world.DungeonGenerator;
+import it.unicam.cs.mpgc.rpg129518.generation.DungeonGenerator;
 import it.unicam.cs.mpgc.rpg129518.model.world.DungeonRun;
 import it.unicam.cs.mpgc.rpg129518.model.world.GameMap;
 import it.unicam.cs.mpgc.rpg129518.model.world.MapObject;
@@ -148,7 +149,7 @@ public class Game {
         run = null;
         combat = null;
         engagedObject = null;
-        map = content.createVillage();
+        map = MapParser.parseVillage(content.getVillageRows(), content.getDungeons());
         position = map.getStart();
         facing = Direction.DOWN;
         phase = GamePhase.HUB;

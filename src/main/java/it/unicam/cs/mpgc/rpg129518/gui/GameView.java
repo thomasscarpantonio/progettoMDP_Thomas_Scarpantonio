@@ -4,6 +4,7 @@ import it.unicam.cs.mpgc.rpg129518.engine.Game;
 import it.unicam.cs.mpgc.rpg129518.engine.GameListener;
 import it.unicam.cs.mpgc.rpg129518.engine.GamePhase;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Ability;
+import it.unicam.cs.mpgc.rpg129518.model.combat.AbilityCatalog;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Combat;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Monster;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
@@ -350,7 +351,7 @@ public class GameView extends BorderPane implements GameListener {
 
         // i pulsanti si ricostruiscono solo se cambia qualcosa, non a ogni passo
         boolean canCast = phase == GamePhase.COMBAT
-                && game.getPlayer().getMana() >= game.getPlayer().getPlayerClass().getAbility().getManaCost();
+                && game.getPlayer().getMana() >= AbilityCatalog.forClass(game.getPlayer().getPlayerClass()).getManaCost();
         String signature = phase + ":" + canCast;
         if (!signature.equals(actionSignature)) {
             actionSignature = signature;
@@ -364,7 +365,7 @@ public class GameView extends BorderPane implements GameListener {
             case HUB -> nodes.add(actionButton("Menu principale", this::exitToMenu));
             case EXPLORING -> nodes.add(actionButton("Abbandona il dungeon", game::abandonDungeon));
             case COMBAT -> {
-                Ability ability = game.getPlayer().getPlayerClass().getAbility();
+                Ability ability = AbilityCatalog.forClass(game.getPlayer().getPlayerClass());
                 nodes.add(actionButton("[1] Attacca", game::attack));
                 Button special = actionButton("[2] " + ability.getName() + " (" + ability.getManaCost() + " MP)",
                         game::useAbility);

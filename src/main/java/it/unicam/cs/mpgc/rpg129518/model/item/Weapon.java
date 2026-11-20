@@ -1,7 +1,5 @@
 package it.unicam.cs.mpgc.rpg129518.model.item;
 
-import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
-
 public class Weapon extends Item implements Equippable {
 
     private final int attackBonus;
@@ -21,8 +19,8 @@ public class Weapon extends Item implements Equippable {
     }
 
     @Override
-    public String equipOn(Player player) {
-        player.equip(this);
-        return player.getName() + " impugna " + getName() + ".";
+    public String equipOn(ItemUser user) {
+        user.equip(this);
+        return user.getName() + " impugna " + getName() + ".";
     }
 }

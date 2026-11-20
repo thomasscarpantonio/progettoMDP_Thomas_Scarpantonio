@@ -63,7 +63,7 @@ public class Combat {
         if (!isOngoing(log)) {
             return log;
         }
-        Ability ability = player.getPlayerClass().getAbility();
+        Ability ability =AbilityCatalog.forClass(player.getPlayerClass());
         if (!player.spendMana(ability.getManaCost())) {
             log.add("Mana insufficiente per " + ability.getName() + ".");
             return log;

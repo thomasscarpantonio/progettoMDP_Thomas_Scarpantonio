@@ -1,6 +1,5 @@
 package it.unicam.cs.mpgc.rpg129518.model.item;
 
-import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
 
 public class Armor extends Item implements Equippable {
 
@@ -21,8 +20,8 @@ public class Armor extends Item implements Equippable {
     }
 
     @Override
-    public String equipOn(Player player) {
-        player.equip(this);
-        return player.getName() + " indossa " + getName() + ".";
+    public String equipOn(ItemUser user) {
+        user.equip(this);
+        return user.getName() + " indossa " + getName() + ".";
     }
 }

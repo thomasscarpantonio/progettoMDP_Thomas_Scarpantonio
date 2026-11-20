@@ -2,9 +2,6 @@ package it.unicam.cs.mpgc.rpg129518.content;
 
 import it.unicam.cs.mpgc.rpg129518.model.entity.Monster;
 import it.unicam.cs.mpgc.rpg129518.model.item.Item;
-import it.unicam.cs.mpgc.rpg129518.model.world.GameMap;
-import it.unicam.cs.mpgc.rpg129518.model.world.MapParser;
-
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,8 +32,8 @@ public class GameContent {
     }
 
     /** Crea una nuova mappa del villaggio (ogni volta una copia fresca). */
-    public GameMap createVillage() {
-        return MapParser.parseVillage(villageRows, dungeons);
+    public List<String> getVillageRows() {
+        return villageRows;
     }
 
     public Item item(String id) {

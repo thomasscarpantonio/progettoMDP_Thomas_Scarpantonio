@@ -1,5 +1,6 @@
 package it.unicam.cs.mpgc.rpg129518;
 
+import it.unicam.cs.mpgc.rpg129518.model.combat.AbilityCatalog;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Combat;
 import it.unicam.cs.mpgc.rpg129518.model.combat.CombatState;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Boss;
@@ -59,7 +60,7 @@ class CombatTest {
         Player player = new Player("Test", PlayerClass.WARRIOR);
         Monster dummy = new Monster("d", "Manichino", 100, 1, 0, 0, 0);
         Combat combat = new Combat(player, dummy, new Random(1));
-        while (player.getMana() >= player.getPlayerClass().getAbility().getManaCost()) {
+        while (player.getMana() >= AbilityCatalog.forClass(player.getPlayerClass()).getManaCost()) {
             combat.useAbility();
         }
         int hpBefore = dummy.getHp();

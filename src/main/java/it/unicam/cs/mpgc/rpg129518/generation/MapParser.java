@@ -1,6 +1,7 @@
-package it.unicam.cs.mpgc.rpg129518.model.world;
+package it.unicam.cs.mpgc.rpg129518.generation;
 
 import it.unicam.cs.mpgc.rpg129518.content.DungeonDefinition;
+import it.unicam.cs.mpgc.rpg129518.model.world.*;
 
 import java.util.List;
 

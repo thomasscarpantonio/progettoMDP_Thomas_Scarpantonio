@@ -3,7 +3,6 @@ package it.unicam.cs.mpgc.rpg129518.model.item;
 import java.util.ArrayList;
 
 import java.util.List;
-import it.unicam.cs.mpgc.rpg129518.model.entity.Player;
 
 /** Pozione che ripristina punti ferita e/o mana. */
 public class Potion extends Item implements Consumable
@@ -38,9 +37,9 @@ public class Potion extends Item implements Consumable
     }
 
     @Override
-    public String consume(Player player) {
-        int healed = player.heal(healAmount);
-        int restored = player.restoreMana(manaAmount);
-        return player.getName() + " usa " + getName() + ": recupera " + healed + " PV e " + restored + " MP.";
+    public String consume(ItemUser user) {
+        int healed = user.heal(healAmount);
+        int restored = user.restoreMana(manaAmount);
+        return user.getName() + " usa " + getName() + ": recupera " + healed + " PV e " + restored + " MP.";
     }
 }

@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg129518.model.entity;
 
 import it.unicam.cs.mpgc.rpg129518.model.item.Armor;
 import it.unicam.cs.mpgc.rpg129518.model.item.Inventory;
+import it.unicam.cs.mpgc.rpg129518.model.item.ItemUser;
 import it.unicam.cs.mpgc.rpg129518.model.item.Weapon;
 
 import java.util.Optional;
@@ -10,7 +11,7 @@ import java.util.Optional;
  * L'eroe controllato dall'utente. Le statistiche dipendono da classe e livello,
  * quindi per ripristinare un salvataggio bastano pochi valori ({@link #restoreState}).
  */
-  public final class Player extends Entity
+  public final class Player extends Entity implements ItemUser
   {
       private static final int HP_PER_LEVEL = 6;
       private static final int MANA_PER_LEVEL = 3;

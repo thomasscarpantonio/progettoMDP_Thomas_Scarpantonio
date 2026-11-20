@@ -1,15 +1,10 @@
 package it.unicam.cs.mpgc.rpg129518.model.entity;
 
-import it.unicam.cs.mpgc.rpg129518.model.combat.Ability;
-import it.unicam.cs.mpgc.rpg129518.model.combat.DoubleStrike;
-import it.unicam.cs.mpgc.rpg129518.model.combat.Fireball;
-import it.unicam.cs.mpgc.rpg129518.model.combat.PowerStrike;
-
 /** Classi giocabili: definiscono statistiche iniziali, arma di partenza e abilità speciale. */
 public enum PlayerClass {
-    WARRIOR("Guerriero", 40, 10, 6, 4, "rusty_sword", new PowerStrike()),
-    MAGE("Mago", 28, 25, 4, 2, "apprentice_staff", new Fireball()),
-    ROGUE("Ladro", 32, 15, 5, 3, "dagger", new DoubleStrike());
+    WARRIOR("Guerriero", 40, 10, 6, 4, "rusty_sword"),
+    MAGE("Mago", 28, 25, 4, 2, "apprentice_staff"),
+    ROGUE("Ladro", 32, 15, 5, 3, "dagger");
 
     private final String displayName;
     private final int baseHp;
@@ -17,17 +12,15 @@ public enum PlayerClass {
     private final int baseAttack;
     private final int baseDefense;
     private final String startingWeaponId;
-    private final Ability ability;
 
     PlayerClass(String displayName, int baseHp, int baseMana, int baseAttack, int baseDefense,
-                String startingWeaponId, Ability ability) {
+                String startingWeaponId) {
         this.displayName = displayName;
         this.baseHp = baseHp;
         this.baseMana = baseMana;
         this.baseAttack = baseAttack;
         this.baseDefense = baseDefense;
         this.startingWeaponId = startingWeaponId;
-        this.ability = ability;
     }
 
     public String getDisplayName() {
@@ -52,9 +45,5 @@ public enum PlayerClass {
 
     public String getStartingWeaponId() {
         return startingWeaponId;
-    }
-
-    public Ability getAbility() {
-        return ability;
     }
 }

@@ -5,6 +5,8 @@ import it.unicam.cs.mpgc.rpg129518.content.GameContent;
 import it.unicam.cs.mpgc.rpg129518.content.JsonContentProvider;
 import it.unicam.cs.mpgc.rpg129518.engine.Game;
 import it.unicam.cs.mpgc.rpg129518.engine.GamePhase;
+import it.unicam.cs.mpgc.rpg129518.generation.DungeonGenerator;
+import it.unicam.cs.mpgc.rpg129518.generation.MapParser;
 import it.unicam.cs.mpgc.rpg129518.model.entity.PlayerClass;
 import it.unicam.cs.mpgc.rpg129518.model.world.*;
 import it.unicam.cs.mpgc.rpg129518.persistence.JsonSaveRepository;
@@ -37,7 +39,7 @@ class GameFlowTest {
 
     @Test
     void villageHasOneGatePerDungeon() {
-        GameMap village = content.createVillage();
+        GameMap village = MapParser.parseVillage(content.getVillageRows(), content.getDungeons());
         long gates = village.getObjects().stream().filter(o -> o.getType() == ObjectType.GATE).count();
         assertEquals(content.getDungeons().size(), gates);
     }
