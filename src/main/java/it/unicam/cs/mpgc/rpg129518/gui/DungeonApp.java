@@ -1,8 +1,10 @@
 package it.unicam.cs.mpgc.rpg129518.gui;
 
 import it.unicam.cs.mpgc.rpg129518.content.ContentProvider;
+import it.unicam.cs.mpgc.rpg129518.content.GameContent;
 import it.unicam.cs.mpgc.rpg129518.content.JsonContentProvider;
 import it.unicam.cs.mpgc.rpg129518.engine.Game;
+import it.unicam.cs.mpgc.rpg129518.generation.DungeonGenerator;
 import it.unicam.cs.mpgc.rpg129518.persistence.JsonSaveRepository;
 import it.unicam.cs.mpgc.rpg129518.persistence.SaveRepository;
 import javafx.application.Application;
@@ -28,7 +30,9 @@ public class DungeonApp extends Application {
         Path saveDirectory = Path.of("saves");
         SaveRepository repository = new JsonSaveRepository(saveDirectory);
 
-        game = new Game(contentProvider.load(), repository, new Random());
+        GameContent content = contentProvider.load();
+        Random random = new Random();
+        game = new Game(content, repository, new DungeonGenerator(content, random), random);
 
         scene = new Scene(new StackPane(), 1050, 750);
         scene.getStylesheets().add(getClass().getResource("/style.css").toExternalForm());

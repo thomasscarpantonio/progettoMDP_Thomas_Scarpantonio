@@ -95,7 +95,8 @@ class GameFlowTest {
     // ---------- utilità di test ----------
 
     private Game newGame(Path dir) {
-        return new Game(content, new JsonSaveRepository(dir), new Random(3));
+        Random random = new Random(3);
+        return new Game(content, new JsonSaveRepository(dir), new DungeonGenerator(content, random), random);
     }
 
     private void walkIntoGate(Game game, String dungeonId) {

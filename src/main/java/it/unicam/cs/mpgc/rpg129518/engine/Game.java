@@ -2,6 +2,7 @@ package it.unicam.cs.mpgc.rpg129518.engine;
 
 import it.unicam.cs.mpgc.rpg129518.content.DungeonDefinition;
 import it.unicam.cs.mpgc.rpg129518.content.GameContent;
+import it.unicam.cs.mpgc.rpg129518.generation.DungeonFactory;
 import it.unicam.cs.mpgc.rpg129518.generation.MapParser;
 import it.unicam.cs.mpgc.rpg129518.model.combat.Combat;
 import it.unicam.cs.mpgc.rpg129518.model.entity.Monster;
@@ -14,7 +15,6 @@ import it.unicam.cs.mpgc.rpg129518.model.item.ItemStack;
 import it.unicam.cs.mpgc.rpg129518.model.item.Weapon;
 import it.unicam.cs.mpgc.rpg129518.model.world.Direction;
 import it.unicam.cs.mpgc.rpg129518.model.world.Dungeon;
-import it.unicam.cs.mpgc.rpg129518.generation.DungeonGenerator;
 import it.unicam.cs.mpgc.rpg129518.model.world.DungeonRun;
 import it.unicam.cs.mpgc.rpg129518.model.world.GameMap;
 import it.unicam.cs.mpgc.rpg129518.model.world.MapObject;
@@ -52,7 +52,7 @@ public class Game {
     private final GameContent content;
     private final SaveRepository repository;
     private final Random random;
-    private final DungeonGenerator generator;
+    private final DungeonFactory dungeonFactory;
     private final List<GameListener> listeners = new ArrayList<>();
     private final Set<String> completedDungeons = new LinkedHashSet<>();
 
@@ -65,11 +65,11 @@ public class Game {
     private Combat combat;
     private MapObject engagedObject;
 
-    public Game(GameContent content, SaveRepository repository, Random random) {
+    public Game(GameContent content, SaveRepository repository, DungeonFactory dungeonFactory, Random random) {
         this.content = content;
         this.repository = repository;
+        this.dungeonFactory = dungeonFactory;
         this.random = random;
-        this.generator = new DungeonGenerator(content, random);
     }
 
     // ================= osservatori =================
@@ -255,7 +255,7 @@ public class Game {
             emit("Il cancello è sbarrato: devi prima completare il dungeon precedente.");
             return;
         }
-        Dungeon dungeon = generator.generate(definition.get());
+        Dungeon dungeon = dungeonFactory.generate(definition.get());
         run = new DungeonRun(dungeon);
         map = run.getMap();
         position = map.getStart();

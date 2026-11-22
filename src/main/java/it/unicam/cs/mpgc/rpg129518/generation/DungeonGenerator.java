@@ -12,7 +12,7 @@ import java.util.*;
  * Genera la mappa di un dungeon: stanze rettangolari collegate da corridoi, con mostri, tesori,
  * fontane curative e trappole. L'ultima stanza ospita il boss. Tutte le stanze sono raggiungibili.
  */
-public class DungeonGenerator {
+public class DungeonGenerator implements DungeonFactory {
 
     private static final int WIDTH = 46;
     private static final int HEIGHT = 30;
@@ -41,6 +41,7 @@ public class DungeonGenerator {
         this.random = random;
     }
 
+    @Override
     public Dungeon generate(DungeonDefinition definition) {
         List<Rect> rooms = placeRooms(Math.max(2, definition.roomCount()));
         GameMap map = new GameMap(WIDTH, HEIGHT, rooms.get(0).center());
